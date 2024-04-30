@@ -5,6 +5,9 @@ from . import views
 urlpatterns = []
 
 urlpatterns += [
+    path('', views.home, name='home_page'),
+]
+urlpatterns += [
     path('department/', views.DepartmentList.as_view(), name='department_list'),
     path('department/add', views.DepartmentCreate.as_view(), name='department_create'),
     path('department/<slug:pk>', views.DepartmentDetail.as_view(), name='department_detail'),

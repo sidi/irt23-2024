@@ -42,3 +42,6 @@ class StudentUpdate(UpdateView):
     model =  Student
     fields = '__all__'
     success_url = reverse_lazy('student_list')
+
+def home(request):
+    return render(request, 'home.html')
