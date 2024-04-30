@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Import {{oname}}</title>{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center">Import {{oname}}</h1>
+
+<form action="/import/{{opath}}" method="POST" enctype="multipart/form-data" class="text-center p-5"> 
+    {% csrf_token %}
+    <div>
+        <label for="formFileLg" class="form-label">File</label>
+        <input class="form-control form-control-lg" required="True" id="formFile" name="formFile" type="file">
+    </div>
+    <div class="p-3">
+        <input type="submit" class="btn btn-primary" value="Save" />
+    </div>
+    
+</form>
+
+{% endblock %}

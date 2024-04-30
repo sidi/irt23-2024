@@ -22,3 +22,7 @@ urlpatterns += [
     path('student/update/<slug:pk>', views.StudentUpdate.as_view(), name='student_update'),
     path('student/delete/<slug:pk>', views.StudentDelete.as_view(), name='student_delete')
 ]
+
+urlpatterns += [
+    path('import/department', views.import_departement_csv, name='department_import'),
+]
