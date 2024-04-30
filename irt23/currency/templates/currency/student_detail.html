@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Student</title>{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center"> Details of Student</h1>
+<ul class="list-group p-5">
+    <li class="list-group-item"><b>Matricule</b>: {{student.matricule}}</li>
+    <li class="list-group-item"><b>Full Name</b>: {{student.full_name}}</li>
+    <li class="list-group-item"><b>Departement</b>: {{student.departement}}</li>
+</ul>
+
+
+{% endblock %}

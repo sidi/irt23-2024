@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Department</title>{% endblock %}
+
+{% block content %}
+
+
+{% if student_list %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Matricule</th>
+        <th scope="col">Full name</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for w in student_list %}
+      <tr>
+        <th scope="row">{{ w.id }}</th>
+        <td>{{ w.matricule }}</td>
+        <td>{{ w.full_name }}</td>
+        <td>
+          <a href="/student/{{ w.id }}" class="btn btn-info">View</a> | <a href="/student/update/{{ w.id }}" class="btn btn-primary">Edit</a> | <a href="/student/delete/{{ w.id }}" class="btn btn-danger">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>There are no record in the database.</p>
+{% endif %}
+{% endblock %}

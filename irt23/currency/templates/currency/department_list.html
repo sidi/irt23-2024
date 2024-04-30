@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}<title>Department</title>{% endblock %}
+
+{% block content %}
+
+
+{% if department_list %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">code</th>
+        <th scope="col">label</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for w in department_list %}
+      <tr>
+        <th scope="row">{{ w.id }}</th>
+        <td>{{ w.code }}</td>
+        <td>{{ w.label }}</td>
+        <td>
+          <a href="/department/{{ w.id }}" class="btn btn-info">View</a> | <a href="/department/update/{{ w.id }}" class="btn btn-primary">Edit</a> | <a href="/department/delete/{{ w.id }}" class="btn btn-danger">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>There are no record in the database.</p>
+{% endif %}
+{% endblock %}
